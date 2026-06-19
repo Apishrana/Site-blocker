@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="popup.css" />
+    </head>
+    <body>
+        <h2>Blocked Sites</h2>
+        <form>
+            <input name="site" placeholder="youtube.com" required />
+            <br />
+            <label for="timeToggle">time</label>
+            <input type="checkbox" name="timeToggle" id="timeToggle" />
+            <br />
+            <div id="timeDiv">
+                <span class="timeDic">
+                    <label for="timeInputFrom">From</label>
+                    <input type="time" name="timeInputFrom" />
+                </span>
+                <br />
+                <span class="timeSpan">
+                    <label for="timeInputTo">To</label>
+                    <input type="time" name="timeInputTo" />
+                </span>
+            </div>
+            <button type="submit">Add</button>
+        </form>
+
+        <ol id="list"></ol>
+
+        <script src="popup.js"></script>
+    </body>
+</html>

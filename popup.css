@@ -1,0 +1,13 @@
+.timeSpan {
+    display: flex;
+    justify-content: space-between;
+}
+#timeDiv {
+    display: none;
+    flex-direction: column;
+}
+li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
