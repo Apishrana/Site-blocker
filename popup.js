@@ -14,8 +14,11 @@ async function render() {
     const { blockedSites = [] } = await chrome.storage.sync.get('blockedSites');
     list.innerHTML = '';
     blockedSites.forEach((siteData) => {
-        const li = document.createElement('li');
+        const container = document.createElement('div');
+        const li = document.createElement('div');
         const del = document.createElement('button');
+        const p = document.createElement('p');
+        container.className = 'container';
         del.textContent = 'X';
         del.onclick = async () => {
             const updated = blockedSites.filter(
@@ -27,8 +30,13 @@ async function render() {
             render();
         };
         li.textContent = siteData.site + ' ';
-        li.appendChild(del);
-        list.appendChild(li);
+        container.appendChild(li);
+        if (siteData.time) {
+            p.innerText = `${siteData.timeFrom} - ${siteData.timeTo}`;
+            li.appendChild(p);
+        }
+        container.appendChild(del);
+        list.appendChild(container);
     });
 }
 
@@ -44,7 +52,7 @@ form.onsubmit = async (e) => {
         timeFrom: data.get('timeInputFrom') || '',
         timeTo: data.get('timeInputTo') || '',
     };
-    
+
     if (Pl.time && (!Pl.timeFrom?.trim() || !Pl.timeTo?.trim())) {
         console.log('a');
         Pl.time = false;
