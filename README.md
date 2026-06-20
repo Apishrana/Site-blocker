@@ -2,16 +2,7 @@
 
 SiteBlocker is a simple Chrome extension to block websites, with ability to block all the time or between a selected time range.
 
-<!--
-## Features
-
-- Add websites to a blocked list from the extension popup.
-- Remove websites from the blocked list.
-- Optionally set a daily blocking window with start and end times.
-- Uses Chrome sync storage so the blocked list can sync with your browser profile.
-- Closes matching tabs automatically after they finish loading. -->
-
-## Project Stricture
+## Project Structure
 
 ```text
 .
@@ -27,6 +18,8 @@ SiteBlocker is a simple Chrome extension to block websites, with ability to bloc
 
 1. The popup saves blocked sites to `chrome.storage.sync`.
 2. If the tab URL contains a blocked site value, the tab is closed.
+
+NOTE: the site detection works on `.includes` so if you block word `you`, every url with the word `you` will be blocked
 
 ## Installation
 

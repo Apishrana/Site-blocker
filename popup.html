@@ -6,7 +6,11 @@
     <body>
         <h2>Blocked Sites</h2>
         <form>
-            <input name="site" placeholder="youtube.com" required />
+            <input
+                name="site"
+                placeholder="youtube.com"
+                required
+                style="width: 100%" />
             <br />
             <label for="timeToggle">time</label>
             <input type="checkbox" name="timeToggle" id="timeToggle" />
@@ -22,7 +26,8 @@
                     <input type="time" name="timeInputTo" />
                 </span>
             </div>
-            <button type="submit">Add</button>
+            <br />
+            <button style="margin: auto" type="submit">Add</button>
         </form>
         <br />
         <div id="list"></div>
